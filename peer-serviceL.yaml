@@ -1,0 +1,10 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: echo-peerauthentication
+spec:
+  selector:
+    matchLabels:
+      app: echoserver
+  mtls:
+    mode: STRICT
