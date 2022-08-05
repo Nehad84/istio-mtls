@@ -32,21 +32,25 @@ access nginx pod bash/sh: (1)
 
 and run the following:
 - Install Curl:
+
 `apk add curl`
 
-- Access echo server from nginx pod:
+- Access echo server from nginx pod: (2)
+
 `curl echoserver:8080`
 
 
 deploy Peer PeerAuthentication at the application level for echoserver:
+
 `kubectl apply -f peer-serviceL.yaml -n istio-mtls`
 
 now nginx should access echoserver with mtls 
 
 to prevent the access deploy destination:
+
 `kubectl apply -f dest-serviceL.yaml -n istio-mtls`
 
-now if you try (1) nginx can't access echoserver
+now if you try (1,2) nginx can't access echoserver
 
 
 
