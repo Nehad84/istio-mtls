@@ -1,4 +1,5 @@
 Install ISTIO:
+
 `curl -L https://istio.io/downloadIstio | sh -`
 
 
@@ -18,6 +19,7 @@ Install ISTIO:
 
 
 Deploy App:
+
 `kubectl create ns istio-mtls`
 
 `kubectl label ns istio-mtls istio-injection=enabled`
@@ -25,9 +27,11 @@ Deploy App:
 `kubectl apply -f echoserver.yaml -n istio-mtls`  including istio ingress example flagged as 'starting the ingress part'
 
 Deploy nginx:
+
 `kubectl apply -f nginx.yaml -n istio-mtls`
 
 access nginx pod bash/sh: (1)
+
 `kubectl exec -it pod/nginx-v1-5b5c47574b-s6mr7 -n istio-mtls -- sh`
 
 and run the following:
