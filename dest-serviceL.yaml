@@ -3,7 +3,7 @@ kind: DestinationRule
 metadata:
   name: dest-rule
 spec:
-  host: echoserver.istio-mtls.svc.cluster.local
+  host: '*.istio-mtls.svc.cluster.local'
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
